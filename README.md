@@ -3,9 +3,9 @@
 This project gives analysis for green energy production, there are many forms of green energy to invest in, including: hydroelectricity, wind energy, geothermal energy, and bioenergy. The client decided to invest into **DAQO** New Energy Corporation, a company that makes silicon wafers for solar panels. DAQO’s ticker symbol is DQ. The researcher promised to investigate **DAQO** stocks, but he concerned about diversifying the client funds. The clint want to analyze a handful of green energy stocks in addition to DAQO’s stock. He created an **EXCEL** file containing the stock data. The initial analysis provides a well structure code to return the specific results. 
 ### Purpose:
 Refactoring is the art of reworking your code into a more simplified or efficient form in a disciplined way. Refactoring improves internal code structure without altering its external functionality by transforming functions and rethinking algorithms. 
-The main purpose of this project is to give the researcher the information about stock data in varies resources. The specific purpose of this project is to make the code more efficient, and to prepare a workbook, that, at the click of a button, the researcher can analyze an entire dataset. 
+The main purpose of this project is to give the researcher the information about stock data in varies resources. The specific purpose of this project is to make the code [GitHub Pages](https://github.com/intisarkhalil/Stocks-Analysis.git) more efficient, and to prepare a workbook, that, at the click of a button, the researcher can analyze an entire dataset. 
 ## Analysis and Challenges:
-In this analysis, the researcher edits, or refactor, the solution code to loop through all the data one time to collect the same information, which is ensure that the refactoring of the code successfully made the **VBA** script run faster.  The process of the analysis to prepare a refactored code to run the yearly stock analysis including the following steps:
+In this analysis, the researcher edits, or refactor, the solution code to loop through all the data one time to collect the same information, which is ensure that the refactoring of the code successfully made the **VBA** script run faster.  The process of the analysis to prepare a refactored code [GitHub Pages](https://github.com/intisarkhalil/Stocks-Analysis.git) to run the yearly stock analysis including the following steps:
   - Create a subroutine named All Stocks Analysis.  
   - Define Start Time and End Time as Single variables
   - Define the year variable to input the year in the box message, using ``` InputBox() ``` function.
@@ -25,18 +25,42 @@ In this analysis, the researcher edits, or refactor, the solution code to loop t
   -	Loop through array to output the Ticker, Ticker Volume and Return.
   -	Loop over formatting setting:
     - Assign font style to bold style through the range (A3:C3).
-    - Add ``` borderbottom ``` line style, through the range (A3:C3) using ``` lcontinuous ```.
+    - Add ``` borderbottom ``` line style, through the range (A3:C3) using ``` lxcontinuous ```.
     - Change the number format for the range (B4:B15), using ``` (#,##0) ``` format.
     - Change the number format for the range (C4:C15), using ``` (0.0%) ``` format.
   - Loop over all value in column 3 to change the cell color according to condition that, if the cell value greater than zero (positive) then assign the cell color to green and  if not (negative) assign the color to red.
   - Finally, create the end time timer, and create a box message ``` MsgBox() ``` to present the elapsed run time for the refactored code. And end the Subroutine.
 ## Results:
 Results of the **VBA** Refactored code can be pointed as follows:
-  1. The refactor code return the yearly stocks analysis result for the year 2018, 2017, shown in the following image.
-  2.	Results are well structure and readable, using **comments** and **whitespace**. 
-  3.	Using font style, border bottom line style, number, color, and conditional formatting, lead to very interactive results layout.
-  4.	looping through the data one time and collect all the information result in running the code so faster.
-  5.	Also, the ``` Button ``` that use to run the codes are very useful. 
+  1. The refactor code return the yearly stocks analysis result for the year 2018, 2017, shown in the following image in [gitHub Pages](https://github.com/intisarkhalil/Stocks-Analysis.git).
+  
+  2. Results are well structure and readable, using **comments** and **whitespace**. 
+  3. looping through the data one time and collect all the information result in running the code so faster. see the Resources file in the following link [GitHub](https://github.com/intisarkhalil/Stocks-Analysis.git)
+      
+```    
+    For i = 2 To RowCount
+         3a) Increase volume for current ticker
+             tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value  
+        '3b) Check if the current row is the first row with the selected tickerIndex.
+             If Cells(i - 1, 1).Value <> Cells(i, 1) Then
+             tickerStartingPrices(tickerIndex) = Cells(i, 6).Value
+             End If
+        '3c) check if the current row is the last row with the selected ticker
+             'If the next row’s ticker doesn’t match, increase the tickerIndex.
+              If Cells(i + 1, 1).Value <> Cells(i, 1) Then
+              tickerEndingPrices(tickerIndex) = Cells(i, 6).Value
+              End If
+        '3d) Increase the tickerIndex.
+             If Cells(i + 1, 1).Value <> tickers(tickerIndex) And Cells(i, 1).Value = tickers(tickerIndex) Then
+             tickerIndex = tickerIndex + 1
+             End If
+    Next i 
+```   
+     
+  4. Also, the ``` Button ``` that use to run the codes are very useful. 
+    ![Screenshot (138)](https://user-images.githubusercontent.com/62036983/135702869-b93a1194-a4ff-46eb-bfd1-17ddbebb4b2f.png)
+  5. Using font style, border bottom ``` linestyle ```, number, color, and conditional formatting, lead to very interactive results layout.
+  
 ## Summary: 
 Refactoring is the art of reworking your code into a more simplified or efficient form in a disciplined way. Refactoring improves internal code structure without altering its external functionality by transforming functions and rethinking algorithms. 
 Using refactoring processing described above, on our codes we find the following conclusions: 
